@@ -1,11 +1,14 @@
 import { useState } from 'react'
+import Button from '@mui/material/Button'
 
 export const Counter = () => {
   const [count, setCount] = useState(0)
   return (
     <div>
-      <h3>Update the count and edit src/App.tsx, state is preserved</h3>
-      <button onClick={() => setCount((c) => c + 1)}>Count - {count}</button>
+      <p>Update the count and edit src/App.tsx, state is preserved</p>
+      <Button variant="contained" onClick={() => setCount((c) => c + 1)}>
+        Count - {count}
+      </Button>
     </div>
   )
 }
