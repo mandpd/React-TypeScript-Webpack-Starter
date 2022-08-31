@@ -10,14 +10,22 @@ export const theme = createTheme({
   },
 })
 
+interface ButtonProps {
+  /**
+   * Optional click handler
+   */
+  label: string
+  onClick?: () => void
+}
+
 /**
  * Primary UI component for user interaction
  */
-export const MyButton = () => {
+export const MyButton = ({ label, ...props }: ButtonProps) => {
   return (
     <Grid container spacing={1}>
-      <Button variant="contained" color="warning">
-        Hi
+      <Button variant="contained" {...props}>
+        {label}
       </Button>
     </Grid>
   )
